@@ -24,5 +24,38 @@ document.addEventListener("DOMContentLoaded", function () {
     myForm.onsubmit = function () { // use onsubmit vs click. This is catered towards forms. It is also why we called for the form in the previous line
         var formTxt = document.getElementById('message').value;
         alert(formTxt);
+        
+        var parDiv = document.createElement('div');
+        document.body.appendChild(parDiv);
+        var paraText = document.createTextNode(formTxt);
+        parDiv.appendChild(paraText);
+        return false;
     };
+//Objective 3: create a div that changes background color
+   
+    var colorDiv = document.createElement('div');
+    document.body.appendChild(colorDiv);
+    colorDiv.style.height = '200px';
+    colorDiv.style.marginTop = '20px';
+    colorDiv.style.border = "thick solid black";
+    const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    //colorDiv.style.backgroundColor = rndCol;
+    colorDiv.addEventListener('mouseover', () => {        
+        colorDiv.style.backgroundColor = rndCol;
+        
+    });
+    
+    colorDiv.addEventListener('mouseout', () => {        
+        colorDiv.style.backgroundColor = 'transparent';
+    });
+
+// Objective 4: Text in paragraph changes color with each click
+// see object 2 for the creation of paragraph with text
+
+
+
 });
+
+function random(num) {
+    return Math.floor(Math.random() * (num + 1));
+};
