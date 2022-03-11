@@ -32,7 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //don't forget when getting something whether id element or class put it in quotes
 
+    //need to figure out how to put press here above form
+
+
     var myForm = document.getElementById('form');
+    document.body.appendChild(myForm);
     myForm.onsubmit = function () {
         var formTxt = document.getElementById('message').value;
         alert(formTxt);
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var parDiv = document.createElement('p');
         //createas a paragraph div
 
-        document.body.appendChild(parDiv);
+        myForm.appendChild(parDiv);
         //appends the paragraph div to the body
 
         var paraText = document.createTextNode(formTxt);
@@ -51,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         parDiv.appendChild(paraText);
         //appends text node to paragraph div
 
-        parDiv.addEventListener('mouseover', () => {
+        parDiv.addEventListener('click', () => {
             parDiv.style.color = rndCol;
             //changes the color of text to a random color when moused over the paragraph div
         });
@@ -102,14 +106,51 @@ document.addEventListener("DOMContentLoaded", function () {
     newButton.appendChild(newButtonText);
     //text for said button
 
+    //need to figure out how to put on new line after each push
     newButton.addEventListener("click", function () {
+        
         var myInfoSpan = document.createElement('span');
         //creates a span for info
         var myInfoText = document.createTextNode('My Name is David the Great')
         //info that is provided when button is pressed
-        document.body.appendChild(myInfoSpan);
+        div4newButton.appendChild(myInfoSpan);
         myInfoSpan.appendChild(myInfoText);
-        //appendsthe info to span and then the span to the body
+        //appends the info to span and then the span to the body
+        newButton.disabled = 'true';
+    });
+    
+    //Objective 6 button for friends
+
+    //creates a div for button3 appends button 3 to the div
+    var div4button3 = document.createElement('div');
+    document.body.appendChild(div4button3);
+    
+    //creates button 3 and appends it to the div
+    var Button3 = document.createElement('button');
+    div4button3.appendChild(Button3);
+    //adds text to the button 3
+    var Button3Text = document.createTextNode("Press for a friend");
+    Button3.appendChild(Button3Text);
+    
+    //creates a div for unordered list appends unordered list to the div for the button
+    var ulistDiv = document.createElement('ul');
+    div4button3.appendChild(ulistDiv);
+    
+    var friendsList = ['John', 'Collin', 'Derek', 'Clae', 'Cam', 'Matt', 'Rob', 'Katherine', 'Mike', 'Shreeju'];
+    var i = 0;   
+   
+    
+    Button3.addEventListener("click", function () {  
+        if (i >= friendsList.length) {
+            Button3.disabled = 'true';
+        } else {
+            var liListDiv = document.createElement('li');
+            ulistDiv.appendChild(liListDiv);
+            nameList= document.createTextNode(friendsList[i]);
+            liListDiv.appendChild(nameList)
+            i++;
+            
+        };
     });
 
 });
