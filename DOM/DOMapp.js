@@ -1,28 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     //Objective 1: Make a button
-    var div4Btn = document.createElement('div');
+    var divBtn1 = document.createElement('div');
     //div to seperate the button from rest
 
-    div4Btn.className = 'div-4-Btn';
+    divBtn1.className = 'div-Btn1';
     //gives class name to div so that we know which one
 
-    document.body.appendChild(div4Btn);
+    document.body.appendChild(divBtn1);
     //adds the div to the body 
 
-    var btn = document.createElement("button");
+    var btn1 = document.createElement("button");
     //creates a button
 
     let btnText = document.createTextNode("Press here");
     //text for said button
 
-    btn.appendChild(btnText);
+    btn1.appendChild(btnText);
     //adds the text to the button like a lable
 
-    div4Btn.appendChild(btn);
+    divBtn1.appendChild(btn1);
     //adds the button to the button division
 
-    btn.addEventListener("click", function () {
+    btn1.addEventListener("click", function () {
         alert('You pressed the button!');
     });
 
@@ -49,13 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
         myForm.appendChild(parDiv);
         //appends the paragraph div to the body
 
-        var paraText = document.createTextNode(formTxt);
+        var parText = document.createTextNode(formTxt);
         //creates textnode out of the text inputed
 
-        parDiv.appendChild(paraText);
+        parDiv.appendChild(parText);
         //appends text node to paragraph div
 
         parDiv.addEventListener('click', () => {
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
             parDiv.style.color = rndCol;
             //changes the color of text to a random color when moused over the paragraph div
         });
@@ -94,56 +95,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Objective 5: add a buton and an empty div that adds a span
 
-    var div4newButton = document.createElement('div');
+    var div4Btn3 = document.createElement('div');
     //A seconddiv to seperate the button from rest   
-    document.body.appendChild(div4newButton);
+    document.body.appendChild(div4Btn3);
     //adds the div to the body 
-    var newButton = document.createElement("button");
+    var btn3 = document.createElement("button");
     //creates a button
-    div4newButton.appendChild(newButton);
+    div4Btn3.appendChild(btn3);
     //adds the button to the button division
 
-    var newButtonText = document.createTextNode("Press for Info");
-    newButton.appendChild(newButtonText);
+    var btn3Text = document.createTextNode("Press for Info");
+    btn3.appendChild(btn3Text);
     //text for said button
 
     //need to figure out how to put on new line after each push
-    newButton.addEventListener("click", function () {
+    btn3.addEventListener("click", function () {
         
         var myInfoSpan = document.createElement('span');
         //creates a span for info
         var myInfoText = document.createTextNode('My Name is David the Great')
         //info that is provided when button is pressed
-        div4newButton.appendChild(myInfoSpan);
+        div4Btn3.appendChild(myInfoSpan);
         myInfoSpan.appendChild(myInfoText);
         //appends the info to span and then the span to the body
-        newButton.disabled = 'true';
+        btn3.disabled = 'true';
     });
     
     //Objective 6 button for friends
 
-    //creates a div for button3 appends button 3 to the div
-    var div4button3 = document.createElement('div');
-    document.body.appendChild(div4button3);
+    //creates a div for btn4 appends button 3 to the div
+    var div4Btn4 = document.createElement('div');
+    document.body.appendChild(div4Btn4);
     
     //creates button 3 and appends it to the div
-    var Button3 = document.createElement('button');
-    div4button3.appendChild(Button3);
+    var btn4 = document.createElement('button');
+    div4Btn4.appendChild(btn4);
     //adds text to the button 3
-    var Button3Text = document.createTextNode("Press for a friend");
-    Button3.appendChild(Button3Text);
+    var btn4Text = document.createTextNode("Press for a friend");
+    btn4.appendChild(btn4Text);
     
     //creates a div for unordered list appends unordered list to the div for the button
     var ulistDiv = document.createElement('ul');
-    div4button3.appendChild(ulistDiv);
+    div4Btn4.appendChild(ulistDiv);
     
     var friendsList = ['John', 'Collin', 'Derek', 'Clae', 'Cam', 'Matt', 'Rob', 'Katherine', 'Mike', 'Shreeju'];
     var i = 0;   
    
     
-    Button3.addEventListener("click", function () {  
+    btn4.addEventListener("click", function () {  
         if (i >= friendsList.length) {
-            Button3.disabled = 'true';
+            btn4.disabled = 'true';
         } else {
             var liListDiv = document.createElement('li');
             ulistDiv.appendChild(liListDiv);
