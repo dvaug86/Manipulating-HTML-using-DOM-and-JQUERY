@@ -74,10 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
     colorDiv.style.height = '200px';
     colorDiv.style.marginTop = '20px';
     colorDiv.style.border = "thick solid black";
-    const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    
     //styling for the div
 
     colorDiv.addEventListener('mouseover', () => {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
         colorDiv.style.backgroundColor = rndCol;
         //mouseover changes box to random color
     });
